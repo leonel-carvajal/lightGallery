@@ -1,0 +1,82 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+.main{
+  width: 80%;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  display: grid; 
+  place-items: center;
+  gap: 15px;
+  background-color: #eee;
+  border-radius: 10px;
+  box-shadow: 0 4px 2px 3px rgba(0, 0,0, 0.2);
+}
+@media screen and (min-width:360px) {
+  .main{
+    grid-template-columns:1fr;
+  }
+}
+@media screen and (min-width:768px) {
+  .main{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+@media screen and (min-width:1024px) {
+  .main{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+.main__title{
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.main__img{
+  max-width: 75%;
+  cursor: pointer;
+}
+
+.ligthBox{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+.ligthBox--show{
+  transform: scale(1);
+}
+
+.ligthBox__img{
+  display: inline-block;
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+  outline: 4px solid #fff;
+}
+.lightBox__container{
+  position: relative;
+}
+.arrow__back,
+.arrow__forward{
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.arrow__back{
+  left: -40px;
+}
+.arrow__forward{
+  right: -40px;
+}
