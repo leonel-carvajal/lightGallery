@@ -1,5 +1,6 @@
 body{
   font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   text-align: center;
 }
 .main{
@@ -49,7 +50,7 @@ body{
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-  transform: scale(1);
+  transform: scale(0);
   transition: transform 0.5s;
 }
 .ligthBox--show{
@@ -62,6 +63,9 @@ body{
   height: 300px;
   object-fit: cover;
   outline: 4px solid #fff;
+}
+.ligthBox__img--change{
+  animation: change 1s linear;
 }
 .lightBox__container{
   position: relative;
@@ -79,4 +83,31 @@ body{
 }
 .arrow__forward{
   right: -40px;
+}
+.ligthBox__close{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 25px;
+  right: 50px;
+  cursor: pointer;
+}
+@keyframes change {
+  0%{ opacity: 0;}
+  50%{opacity: 0.5;}
+  100%{opacity: 1;}
+}
+.miniatures{
+  width: 50px;
+  height: 50px;
+  margin-left:auto ;
+  margin-right: auto;
+  position: absolute;
+  bottom: 25px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.miniatures__img{
+  cursor: pointer;
+  outline: 1px solid #fff;
 }
