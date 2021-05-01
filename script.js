@@ -13,6 +13,7 @@ const arrowBack = document.querySelector(".arrow__back");
 const arrowForward = document.querySelector(".arrow__forward");
 const iconClose = document.getElementById("close");
 const miniatures = document.querySelectorAll(".miniatures__img");
+const imgligthBox = document.querySelector('.ligthBox__img')
 let index = 0;
 
 const image = (img) => {
@@ -26,11 +27,11 @@ images.forEach((img) => {
 		image(img);
 	});
 });
-iconClose.addEventListener("click", () =>
-	ligthBox.classList.remove("ligthBox--show")
-);
+iconClose.addEventListener("click", () => ligthBox.classList.remove("ligthBox--show"));
+
 miniatures.forEach((miniature) => {
 	miniature.addEventListener("click", () => {
+		imgligthBox.classList.add('ligthBox__img--change')
 		image(miniature);
 	});
 });
@@ -50,10 +51,14 @@ const ChangeImage = (arrow) => {
 		Begin();
 	}
 };
+imgligthBox.addEventListener('animationend',()=>imgligthBox.classList.remove('ligthBox__img--change'))
 arrowBack.addEventListener("click", () => {
+	imgligthBox.classList.add('ligthBox__img--change')
 	ChangeImage("back");
+	
 });
 arrowForward.addEventListener("click", () => {
+	imgligthBox.classList.add('ligthBox__img--change')
 	ChangeImage("forward");
 });
 
